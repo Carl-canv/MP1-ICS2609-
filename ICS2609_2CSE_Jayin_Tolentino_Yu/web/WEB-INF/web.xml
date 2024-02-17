@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>LoginServlet.do</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+        <init-param>
+            <param-name>dbusername</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbpassword</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbdriver</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbURL</param-name>
+            <param-value>jdbc:derby://localhost:1527/LoginDB</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet.do</servlet-name>
+        <servlet-class>controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet.do</servlet-name>
+        <url-pattern>/ServletniLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet.do</servlet-name>
+        <url-pattern>/ServletniLogout</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            5
+        </session-timeout>
+    </session-config>
+    <context-param>
+        <param-name>ProjectName</param-name>
+        <param-value>MP2</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Subject</param-name>
+        <param-value>ICS 2609</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Section</param-name>
+        <param-value>2CSE</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Name</param-name>
+        <param-value>Jayin, Tolentino, Yu </param-value>
+    </context-param>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
